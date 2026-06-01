@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8f9fa;
+  color: #191c1d;
+}
+
+::selection {
+  background: #111827;
+  color: #ffffff;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-line bg-white;
+  }
+
+  .label-caps {
+    @apply text-[11px] font-bold uppercase tracking-[0.05em] text-muted;
+  }
+
+  .mono {
+    @apply font-mono text-[13px] leading-[18px];
+  }
+}
