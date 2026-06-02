@@ -1,0 +1,17 @@
+services:
+  shipreadme:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: shipreadme:latest
+    container_name: shipreadme
+    restart: unless-stopped
+    ports:
+      - "3003:3000"
+    environment:
+      NODE_ENV: production
+      HOSTNAME: 0.0.0.0
+      PORT: 3000
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+      MAX_REPOSITORY_TREE_ITEMS: ${MAX_REPOSITORY_TREE_ITEMS:-3000}
+      MAX_FETCH_FILE_BYTES: ${MAX_FETCH_FILE_BYTES:-120000}

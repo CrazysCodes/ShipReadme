@@ -42,6 +42,28 @@ npm run typecheck
 npm run build
 ```
 
+## Docker 部署
+
+本项目提供 `Dockerfile` 和 `docker-compose.yml`，服务器部署端口为 `3003`：
+
+```bash
+docker compose up -d --build
+```
+
+启动后访问：
+
+```text
+http://localhost:3003
+```
+
+如果需要 GitHub API 更高限额，可以在服务器环境变量或 `.env` 中设置：
+
+```bash
+GITHUB_TOKEN=your_github_token
+MAX_REPOSITORY_TREE_ITEMS=3000
+MAX_FETCH_FILE_BYTES=120000
+```
+
 ## README 规则策略
 
 第一版使用规则引擎和模板生成，刻意不依赖 AI：
